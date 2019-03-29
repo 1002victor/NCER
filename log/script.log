@@ -1,0 +1,668 @@
+2019-03-28 01:48:23,582 [Thread-2:21880] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-28 01:57:49,587 [Thread-2:32656] [django.request:228] [log:log_response] [WARNING]- Not Found: /
+2019-03-28 01:58:24,408 [Thread-2:268] [django.request:228] [log:log_response] [WARNING]- Not Found: /
+2019-03-28 02:15:01,026 [Thread-2:42580] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project\NCER_project\view.py", line 9, in index
+    temp = open('2_1.txt', 'rb')
+FileNotFoundError: [Errno 2] No such file or directory: '2_1.txt'
+2019-03-28 02:16:20,860 [Thread-2:30156] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project\NCER_project\view.py", line 21, in index
+    xx.save()
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\base.py", line 670, in save
+    "unsaved related object '%s'." % field.name
+ValueError: save() prohibited to prevent data loss due to unsaved related object 'Question'.
+2019-03-28 02:17:54,686 [Thread-2:27336] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\cursors.py", line 312, in _query
+    db.query(q)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\connections.py", line 224, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1048, "Column 'Question_id' cannot be null")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project\NCER_project\view.py", line 21, in index
+    xx.save()
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\base.py", line 718, in save
+    force_update=force_update, update_fields=update_fields)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\base.py", line 869, in _do_insert
+    using=using, raw=raw)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\sql\compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\mysql\base.py", line 76, in execute
+    raise utils.IntegrityError(*tuple(e.args))
+django.db.utils.IntegrityError: (1048, "Column 'Question_id' cannot be null")
+2019-03-28 02:20:44,833 [Thread-2:44292] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\cursors.py", line 312, in _query
+    db.query(q)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\connections.py", line 224, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1048, "Column 'Question_id' cannot be null")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project\NCER_project\view.py", line 22, in index
+    xx.save()
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\base.py", line 718, in save
+    force_update=force_update, update_fields=update_fields)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\base.py", line 869, in _do_insert
+    using=using, raw=raw)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\sql\compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\mysql\base.py", line 76, in execute
+    raise utils.IntegrityError(*tuple(e.args))
+django.db.utils.IntegrityError: (1048, "Column 'Question_id' cannot be null")
+2019-03-28 02:21:12,140 [Thread-2:34076] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project\NCER_project\view.py", line 22, in index
+    xx.save()
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\base.py", line 670, in save
+    "unsaved related object '%s'." % field.name
+ValueError: save() prohibited to prevent data loss due to unsaved related object 'Question'.
+2019-03-28 02:26:57,921 [Thread-2:10056] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project\NCER_project\view.py", line 11, in index
+    timu = ChoiceQuestions.objects.get(Remark=lineitem[1:39])
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+Python.models.ChoiceQuestions.DoesNotExist: ChoiceQuestions matching query does not exist.
+2019-03-28 02:31:00,858 [Thread-2:42356] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project\NCER_project\view.py", line 12, in index
+    timu = ChoiceQuestions.objects.get(id=40+countindex)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+Python.models.ChoiceQuestions.DoesNotExist: ChoiceQuestions matching query does not exist.
+2019-03-28 02:44:34,801 [Thread-3:41456] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-28 02:47:36,268 [Thread-2:32152] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\cursors.py", line 312, in _query
+    db.query(q)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\connections.py", line 224, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1048, "Column 'IsAnswer' cannot be null")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project\NCER_project\view.py", line 19, in index
+    xx.save()
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\base.py", line 718, in save
+    force_update=force_update, update_fields=update_fields)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\base.py", line 869, in _do_insert
+    using=using, raw=raw)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\sql\compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\mysql\base.py", line 76, in execute
+    raise utils.IntegrityError(*tuple(e.args))
+django.db.utils.IntegrityError: (1048, "Column 'IsAnswer' cannot be null")
+2019-03-28 03:19:05,662 [Thread-2:16540] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\cursors.py", line 312, in _query
+    db.query(q)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\connections.py", line 224, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`NCER`.`Python_options`, CONSTRAINT `Python_options_ibfk_1` FOREIGN KEY (`Question_id`) REFERENCES `Python_choicequestions` (`id`))')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project\NCER_project\view.py", line 26, in index
+    xx.save()
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\base.py", line 718, in save
+    force_update=force_update, update_fields=update_fields)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\base.py", line 869, in _do_insert
+    using=using, raw=raw)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\sql\compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\cursors.py", line 312, in _query
+    db.query(q)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\connections.py", line 224, in query
+    _mysql.connection.query(self, query)
+django.db.utils.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`NCER`.`Python_options`, CONSTRAINT `Python_options_ibfk_1` FOREIGN KEY (`Question_id`) REFERENCES `Python_choicequestions` (`id`))')
+2019-03-28 03:25:02,233 [Thread-2:18392] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\cursors.py", line 312, in _query
+    db.query(q)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\connections.py", line 224, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`NCER`.`Python_options`, CONSTRAINT `Python_options_ibfk_1` FOREIGN KEY (`Question_id`) REFERENCES `Python_choicequestions` (`id`))')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project\NCER_project\view.py", line 20, in index
+    xx.save()
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\base.py", line 718, in save
+    force_update=force_update, update_fields=update_fields)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\base.py", line 869, in _do_insert
+    using=using, raw=raw)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\sql\compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\cursors.py", line 312, in _query
+    db.query(q)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\connections.py", line 224, in query
+    _mysql.connection.query(self, query)
+django.db.utils.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`NCER`.`Python_options`, CONSTRAINT `Python_options_ibfk_1` FOREIGN KEY (`Question_id`) REFERENCES `Python_choicequestions` (`id`))')
+2019-03-28 03:29:39,995 [Thread-2:19596] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project\NCER_project\view.py", line 17, in index
+    xx = Options.objects.get(id=186+xuanxiang)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+Python.models.Options.DoesNotExist: Options matching query does not exist.
+2019-03-28 03:32:42,477 [Thread-2:43876] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project\NCER_project\view.py", line 17, in index
+    xx = Options.objects.get(id=186+xuanxiang)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+Python.models.Options.DoesNotExist: Options matching query does not exist.
+2019-03-28 15:05:53,895 [Thread-2:47952] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project\NCER_project\view.py", line 15, in index
+    timu.Desc=lineitem[38:].decode("gbk")
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 6: illegal multibyte sequence
+2019-03-28 15:07:21,620 [Thread-2:47952] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project\NCER_project\view.py", line 15, in index
+    timu.Desc=lineitem[38:].decode("gbk")
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 6: illegal multibyte sequence
+2019-03-28 15:08:09,495 [Thread-2:50252] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project\NCER_project\view.py", line 15, in index
+    timu.Desc=lineitem[38:].decode("utf-8")
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x87 in position 0: invalid start byte
+2019-03-28 15:10:05,762 [Thread-2:50252] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project\NCER_project\view.py", line 15, in index
+    timu.Desc=lineitem[38:].decode("utf-8")
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x87 in position 0: invalid start byte
+2019-03-28 15:10:35,418 [Thread-3:25684] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project\NCER_project\view.py", line 15, in index
+    timu.Desc=lineitem[38:].decode("gbk")
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 6: illegal multibyte sequence
+2019-03-28 15:11:45,283 [Thread-2:28244] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project\NCER_project\view.py", line 15, in index
+    timu.Desc=lineitem[38:].decode("utf-8")
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb0 in position 0: invalid start byte
+2019-03-28 15:12:10,242 [Thread-2:28244] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project\NCER_project\view.py", line 15, in index
+    timu.Desc=lineitem[38:].decode("utf-8")
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb0 in position 0: invalid start byte
+2019-03-28 21:29:56,337 [Thread-2:38704] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-28 21:45:14,119 [Thread-2:25716] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-28 21:59:21,255 [Thread-3:26320] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-28 22:12:31,232 [Thread-12:19284] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-28 22:14:16,749 [Thread-17:21764] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-28 22:14:34,228 [Thread-17:21764] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-28 22:14:56,090 [Thread-20:19884] [django.request:228] [log:log_response] [WARNING]- Bad Request: /admin/Python/choicequestions/910/change/
+2019-03-28 22:14:56,790 [Thread-21:52020] [django.request:228] [log:log_response] [WARNING]- Bad Request: /favicon.ico
+2019-03-28 22:15:22,452 [Thread-22:39608] [django.request:228] [log:log_response] [WARNING]- Bad Request: /admin/Python/choicequestions/910/change/
+2019-03-28 22:15:22,895 [Thread-23:37156] [django.request:228] [log:log_response] [WARNING]- Bad Request: /favicon.ico
+2019-03-28 22:15:34,663 [Thread-27:31904] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-28 22:18:56,260 [Thread-32:39012] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-28 22:20:55,032 [Thread-2:14912] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project\NCER_project\view.py", line 13, in index
+    item_options = Options.objects.filter(Question_id=rand_item.id)
+AttributeError: 'QuerySet' object has no attribute 'id'
+2019-03-28 22:22:26,585 [Thread-2:24292] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project\NCER_project\view.py", line 13, in index
+    item_options = Options.objects.filter(Question_id=rand_item.id)
+AttributeError: 'QuerySet' object has no attribute 'id'
+2019-03-28 22:26:17,873 [Thread-2:38956] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project\NCER_project\view.py", line 13, in index
+    item_options = Options.objects.filter(Question_id=rand_item.id)
+AttributeError: 'QuerySet' object has no attribute 'id'
+2019-03-28 22:29:42,500 [Thread-3:51268] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-28 22:35:50,122 [Thread-4:45264] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-28 22:36:42,749 [Thread-5:16828] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-28 22:38:49,736 [Thread-2:44516] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-28 22:44:01,445 [Thread-4:39692] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-28 22:49:58,375 [Thread-6:5964] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-28 22:55:31,880 [Thread-7:8712] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-28 22:55:37,774 [Thread-8:49436] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-28 23:00:37,057 [Thread-10:44944] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-28 23:06:00,831 [Thread-11:12632] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-28 23:36:10,297 [Thread-13:2064] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-28 23:56:51,750 [Thread-6:30604] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-28 23:58:12,788 [Thread-7:25292] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-29 00:58:25,292 [Thread-2:920] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project\NCER_project\view.py", line 12, in index
+    rand_item = random.sample(ChoiceQuestions.objects.all(), 40)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\random.py", line 313, in sample
+    raise TypeError("Population must be a sequence or set.  For dicts, use list(d).")
+TypeError: Population must be a sequence or set.  For dicts, use list(d).
+2019-03-29 00:58:25,578 [Thread-2:920] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-29 00:59:46,993 [Thread-2:30408] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project\NCER_project\view.py", line 12, in index
+    rand_item = random.sample(ChoiceQuestions.objects.all(), 40)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\random.py", line 313, in sample
+    raise TypeError("Population must be a sequence or set.  For dicts, use list(d).")
+TypeError: Population must be a sequence or set.  For dicts, use list(d).
+2019-03-29 01:01:25,919 [Thread-2:42692] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project\NCER_project\view.py", line 12, in index
+    rand_item = random.sample(ChoiceQuestions.objects.all(), 40)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\random.py", line 313, in sample
+    raise TypeError("Population must be a sequence or set.  For dicts, use list(d).")
+TypeError: Population must be a sequence or set.  For dicts, use list(d).
+2019-03-29 01:02:12,786 [Thread-2:38232] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project\NCER_project\view.py", line 12, in index
+    rand_item = random.sample(ChoiceQuestions.objects.all(), 1)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\random.py", line 313, in sample
+    raise TypeError("Population must be a sequence or set.  For dicts, use list(d).")
+TypeError: Population must be a sequence or set.  For dicts, use list(d).
+2019-03-29 01:27:13,944 [Thread-6:19000] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-29 01:27:41,987 [Thread-9:18436] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-29 01:31:58,230 [Thread-25:17252] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-29 08:27:01,763 [Thread-20:16536] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-29 12:16:34,501 [Thread-5:54888] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-29 12:33:47,972 [Thread-7:54720] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-29 12:37:42,607 [Thread-3:34360] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-29 12:47:28,281 [Thread-17:55828] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-29 14:11:28,112 [Thread-3:47648] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-29 14:18:14,160 [Thread-13:30640] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-29 14:19:07,723 [Thread-16:6084] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-29 16:45:10,940 [Thread-109:46328] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-29 16:51:00,020 [Thread-114:54300] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-29 16:55:47,006 [Thread-121:25880] [django.request:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+2019-03-29 17:14:10,673 [Thread-153:47648] [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/jsi18n/
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\contrib\sessions\backends\base.py", line 190, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 83, in _execute
+    return self.cursor.execute(sql)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\cursors.py", line 312, in _query
+    db.query(q)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\connections.py", line 224, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (2013, 'Lost connection to MySQL server during query')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\contrib\admin\sites.py", line 241, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\contrib\admin\sites.py", line 212, in inner
+    if not self.has_permission(request):
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\contrib\admin\sites.py", line 186, in has_permission
+    return request.user.is_active and request.user.is_staff
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\utils\functional.py", line 213, in inner
+    self._setup()
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\utils\functional.py", line 347, in _setup
+    self._wrapped = self._setupfunc()
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\contrib\auth\middleware.py", line 24, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\contrib\auth\middleware.py", line 12, in get_user
+    request._cached_user = auth.get_user(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\contrib\auth\__init__.py", line 182, in get_user
+    user_id = _get_user_session_key(request)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\contrib\auth\__init__.py", line 59, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\contrib\sessions\backends\base.py", line 55, in __getitem__
+    return self._session[key]
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\contrib\sessions\backends\base.py", line 195, in _get_session
+    self._session_cache = self.load()
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\contrib\sessions\backends\db.py", line 43, in load
+    s = self._get_session_from_db()
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\contrib\sessions\backends\db.py", line 34, in _get_session_from_db
+    expire_date__gt=timezone.now()
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\query.py", line 393, in get
+    num = len(clone)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\query.py", line 250, in __len__
+    self._fetch_all()
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\query.py", line 54, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\models\sql\compiler.py", line 1063, in execute_sql
+    cursor = self.connection.cursor()
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\base\base.py", line 255, in cursor
+    return self._cursor()
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\base\base.py", line 232, in _cursor
+    self.ensure_connection()
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\base\base.py", line 216, in ensure_connection
+    self.connect()
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\base\base.py", line 196, in connect
+    self.init_connection_state()
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\mysql\base.py", line 243, in init_connection_state
+    cursor.execute('; '.join(assignments))
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\utils.py", line 83, in _execute
+    return self.cursor.execute(sql)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\cursors.py", line 312, in _query
+    db.query(q)
+  File "F:\python_project\django_project\NCER_project_env\lib\site-packages\MySQLdb\connections.py", line 224, in query
+    _mysql.connection.query(self, query)
+django.db.utils.OperationalError: (2013, 'Lost connection to MySQL server during query')

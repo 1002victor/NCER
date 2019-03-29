@@ -1,0 +1,6 @@
+Chinese: 90,Math:85,English:95, Physical: 81,Art:85,Chemical:88
+Chinese: 70,Math:82,English:93, Physical: 82,Art:86,Chemical:80
+Chinese: 68,Math:81,English:87, Physical: 75,Art:87,Chemical:86
+Chinese: 79,Math:84,English:87, Physical: 81,Art:65,Chemical:83
+Chinese: 73,Math:85,English:86, Physical: 72,Art:76,Chemical:70
+Chinese: 87,Math:81,English:67, Physical: 75,Art:97,Chemical:96

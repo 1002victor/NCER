@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>二级python选择题库</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- 新 Bootstrap4 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- popper.min.js 用于弹窗、提示、下拉菜单 -->
+    <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+
+    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="card">
+  <div class="card-header">{{ timu.id }}、{{ timu.Desc | safe }}</div>
+  <div class="card-body">
+<ul class="list-group">
+     {% for item in xuanxiang %}
+         <li class="option list-group-item list-group-item-light" value="{{ item.IsAnswer }}">{{ item.Option | safe }}</li>
+         {% endfor %}
+     </ul></div>
+  <div class="card-footer">
+      <div class="btn-group w-100 mx-auto">
+    <button type="button" class="btn btn-primary">上一题</button>
+    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">答案解析
+    </button>
+    <button type="button" class="btn btn-primary" id="next">下一题</button>
+  </div>
+  </div>
+</div>
+<div id="demo" class="collapse">
+    <h4><span class="badge badge-success">答案解析</span></h4>
+    <div class="card">
+        <div class="card-body">
+        {{ timu.Answer | safe }}
+    </div>
+    </div>
+  </div>
+</body>
+</html>
+<script>
+$("#next").click(function () {
+        location.reload()
+    })
+    $(".option").click(function (e) {
+        $(this).attr("value", function (i,origValue) {
+         if(origValue == "True")
+        {
+             $(this).attr("class","option list-group-item list-group-item-success")
+        }
+        else
+        {
+           $(this).attr("class","option list-group-item list-group-item-danger")
+        }
+        })
+    })
+</script>
