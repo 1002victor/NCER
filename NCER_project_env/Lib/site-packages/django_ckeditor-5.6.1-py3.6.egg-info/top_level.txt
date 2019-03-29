@@ -1,0 +1,2 @@
+ckeditor
+ckeditor_uploader
