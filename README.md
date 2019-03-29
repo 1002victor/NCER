@@ -30,7 +30,7 @@
 ### 创建数据库
 mysql数据库中执行:
 ```sql
-CREATE DATABASE `djangoblog` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */;
+CREATE DATABASE `NCER` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */;
 ```
  然后终端下执行:
 
