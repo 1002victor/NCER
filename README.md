@@ -1,13 +1,10 @@
 # NCER
 
-基于`python3.6`和`Django2.1`的全国计算机等级考试刷题系统。
+基于`python3.6`和`Django2.2`的全国计算机等级考试刷题系统。
 
 ## 主要功能：
 - 刷题
 - 题库录入
-## 目前集成：
-二级python八百多道选择题，一百多道编程题
-四级嵌入式开发工程师选择题库
 ### 配置
 配置都是在`setting.py`中.部分配置迁移到了后台配置中。
 
@@ -53,9 +50,6 @@ CREATE DATABASE `NCER` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_un
 ### 开始运行：
  执行：
  `./manage.py runserver`
-
-
-
 
 
  浏览器打开: http://127.0.0.1:8000/  就可以看到效果了。
