@@ -1,5 +1,5 @@
 @echo off
-set "VIRTUAL_ENV=F:\python_project\django_project\NCER_project_env"
+set "VIRTUAL_ENV=F:\python_project\django_project\NCER\NCER_project_env"
 
 if not defined PROMPT (
     set "PROMPT=$P$G"

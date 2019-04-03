@@ -1,4 +1,4 @@
-#!F:\python_project\django_project\NCER_project_env\Scripts\python.exe
+#!F:\python_project\django_project\NCER\NCER_project_env\Scripts\python.exe
 # EASY-INSTALL-ENTRY-SCRIPT: 'setuptools==39.1.0','console_scripts','easy_install-3.6'
 __requires__ = 'setuptools==39.1.0'
 import re
