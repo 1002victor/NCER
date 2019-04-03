@@ -1,10 +1,9 @@
-from django.shortcuts import render
+# -*- coding: utf-8 -*-
+from django.shortcuts import render, redirect,render_to_response
+from django.http import HttpResponse,HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-
-
-def index(request):
-    pass
 
 
 def comment(request):
@@ -14,3 +13,8 @@ def comment(request):
 def thumbup(request):
     pass
 
+
+@login_required
+def index(request):
+
+    return HttpResponse("Hello world ! ")

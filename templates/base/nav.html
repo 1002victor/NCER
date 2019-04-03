@@ -1,0 +1,29 @@
+{% load staticfiles %}
+<header id="ace-header" class="ace-container-shift ace-logo-in ace-head-boxed ace-nav-right">
+    <div class="ace-head-inner">
+        <div class="ace-head-container ace-container">
+            <div class="ace-head-row">
+                <div id="ace-head-col2" class="ace-head-col text-right">
+                    <div class="ace-nav-container ace-container hidden-sm hidden-xs">
+                        <nav id="ace-main-nav">
+                            <ul class="clear-list">
+                                {% for menu in menus %}
+                                    <li><a href="{{ menu.Url }}">{{ menu.Name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .ace-container -->
+    </div><!-- .ace-head-inner -->
+</header><!-- #ace-header -->
+<nav id="ace-nav-sm" class="ace-nav hidden-lg hidden-md">
+    <ul class="clear-list">
+        {% for menu in menus %}
+         <li>
+          <a href="{{ menu.Url }}"><span class="ace-icon {{ menu.Icon }}"></span></a>
+        </li>
+        {% endfor %}
+    </ul>
+</nav><!-- #ace-tab-nav-sm -->

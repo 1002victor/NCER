@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.db import models
-from ckeditor.fields import RichTextField
-from ckeditor_uploader.fields import RichTextUploadingField
+#from ckeditor.fields import RichTextField
+#from ckeditor_uploader.fields import RichTextUploadingField
 from Account.models import CommonInfo
 # Create your models here.
 
@@ -29,7 +29,7 @@ LEVEL_CHOICES = (
      ),
     ('三级',
          (
-            ('45', '计网络技术'),
+            ('35', '网络技术'),
             ('36', '数据库技术'),
             ('38', '信息安全技术'),
             ('39', '嵌入式系统开发技术'),
@@ -51,7 +51,7 @@ class Type(CommonInfo):
     Desc = models.CharField(max_length=30, verbose_name="类型说明")
 
     class Meta:
-        verbose_name = '主类型'
+        verbose_name = '考题类型'
         verbose_name_plural = verbose_name
 
     def __str__(self):
@@ -65,7 +65,7 @@ class SubType(CommonInfo):
     Desc = models.CharField(max_length=30, verbose_name="类型说明")
 
     class Meta:
-        verbose_name = '题目类型'
+        verbose_name = '题目子类型'
         verbose_name_plural = verbose_name
 
     def __str__(self):
@@ -86,10 +86,10 @@ class Tag(CommonInfo):
 class ChoiceQuestions(CommonInfo):
     Level = models.CharField(max_length=2, choices=LEVEL_CHOICES, verbose_name="考试分类")
     Type = models.ForeignKey(SubType, on_delete=models.CASCADE, verbose_name="类型", related_name='Type')
-    Desc = RichTextUploadingField(config_name='my_config',default='', verbose_name="题目")
-    Answer = RichTextUploadingField(config_name='my_config',default='', verbose_name="答案解析")
+    Desc = models.TextField(default='', verbose_name="题目")
+    Answer = models.TextField(default='', verbose_name="答案解析")
     Difficulty = models.IntegerField(default=5, verbose_name="难度")
-    Tags = models.ManyToManyField(Tag)
+    Tags = models.ManyToManyField(Tag, verbose_name='标签')
 
     class Meta:
         verbose_name = '选择题'
@@ -104,7 +104,7 @@ class ChoiceQuestions(CommonInfo):
 
 class Options(CommonInfo):
     Question = models.ForeignKey(ChoiceQuestions, on_delete=models.CASCADE, verbose_name="题目")
-    Option = RichTextField(config_name='my_config',default='', verbose_name="选项")
+    Option = models.TextField(default='', verbose_name="选项")
     IsAnswer = models.BooleanField(verbose_name="是否为正确选项")
 
     class Meta:
