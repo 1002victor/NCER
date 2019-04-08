@@ -30,4 +30,5 @@ urlpatterns = [
     path('comment/', include('Comment.urls')),
     path('account/', include('Account.urls')),
     url(r"^uploads/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}),
+    path('search/', views.search),
 ]

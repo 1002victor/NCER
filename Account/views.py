@@ -16,21 +16,30 @@ def index(request):
 
 
 def register(request):
+    ctx = dict()
+    ctx['pagetitle'] = '用户注册'
     if request.method == "POST":
         print(request)
         urf = UserRegisterForm(request.POST)
         if urf.is_valid():
-            username = (request.POST.get('username')).strip()
-            password1 = (request.POST.get('password')).strip()
-            password2 = (request.POST.get('password')).strip()
-            email = (request.POST.get('email')).strip()
+            #username = (request.POST.get('username')).strip()
+            #password1 = (request.POST.get('password')).strip()
+            #password2 = (request.POST.get('password2')).strip()
+            #email = (request.POST.get('email')).strip()
+            username = urf.cleaned_data['username']
+            password1 = urf.cleaned_data['password1']
+            password2 = urf.cleaned_data['password2']
+            email = urf.cleaned_data['email']
+            ctx['urf'] = urf
             if password1 != password2:
-                return render(request, 'register.html', {'urf': urf, 'error': "请重新确认密码，两次密码不相同"})
+                ctx['error'] = "请重新确认密码，两次密码不相同"
+                return render(request, 'register.html', ctx)
             user_list = User.objects.filter(username=username)
             if user_list:
-                return render(request,'register.html', {'urf': urf, 'error': "用户名已存在"})
+                ctx['error'] = "用户名已存在"
+                return render(request, 'register.html', ctx)
             else:
-                user=User()
+                user = User()
                 user.username = username
                 user.password = make_password(password1)
                 user.email = email
@@ -39,18 +48,23 @@ def register(request):
                 return HttpResponseRedirect('/account/login')
     else:
         urf = UserRegisterForm()
-        return render(request,'register.html', {'urf': urf})
+        ctx['urf'] = urf
+        return render(request, 'register.html', ctx)
 
 
 def do_login(request):
+    ctx = dict()
+    ctx['pagetitle'] = '用户登陆'
     if request.method == "POST":
         lf = LoginForm(request.POST)
+        ctx['lf'] = lf
         if lf.is_valid():
             username = (request.POST.get('username')).strip()
             password = (request.POST.get('password')).strip()
             print(username+password)
             if username == "" or password == "":
-                return render(request, 'login.html', {'lf': lf, 'error': "用户名和密码不能为空"})
+                ctx['error'] = "用户名和密码不能为空"
+                return render(request, 'login.html', ctx)
             else:
                 user = authenticate(username=username, password=password)
                 if user is not None:
@@ -58,10 +72,12 @@ def do_login(request):
                     login(request, user)
                     return HttpResponseRedirect("/")
                 else:
-                    return render(request, "login.html", {'lf': lf, 'error': "用户名和密码错误"})
+                    ctx['error'] = "用户名和密码错误"
+                    return render(request, "login.html", ctx)
     else:
         lf = LoginForm()
-        return render(request, 'login.html', {'lf': lf})
+        ctx['lf'] = lf
+        return render(request, 'login.html', ctx)
 
 
 def do_logout(request):
