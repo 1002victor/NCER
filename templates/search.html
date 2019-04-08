@@ -1,18 +1,24 @@
+{% extends 'base/base.html' %}
 {% load staticfiles %}
-<div class="padd-box-sm">
-    <header class="search-for">
-        <h1 class="search-title">search results for:
-        <span>Lorem ipsum</span></h1>
-    </header>
-    <div class="search-result">
-        <strong class="title-lg text-upper">nothing found</strong>
-        <form class="search-again">
-            <div class="form-item-wrap">
-                <input class="form-item" id="searchInput" name="searchInput" type="search" placeholder="Search" value="" size="30" maxlength="80" required="required">
+{% block pagecontent %}
+    <!-- START: PAGE CONTENT -->
+    <div class="padd-box clear-mrg">
+        <div class="padd-box-sm">
+            <header class="search-for">
+                <h1 class="search-title">搜索: </h1>
+            </header>
+            <div class="search-result">
+                <form class="search-again" action="/search" method="get">
+                    <div class="form-item-wrap">
+                        <input class="form-item" id="searchInput" name="search" type="search" placeholder="输入搜索内容"
+                               value="{{ searchinfo }}" size="30" maxlength="80" required="required">
+                    </div>
+                    <div class="form-submit form-item-wrap">
+                        <input class="btn btn-primary" type="submit" id="submit" value="搜索">
+                    </div>
+                </form>
             </div>
-            <div class="form-submit form-item-wrap">
-                <input class="btn btn-primary" name="submit" type="submit" id="submit" value="Try Again">
-            </div>
-        </form>
-    </div>
-</div>
+        </div>
+    </div><!-- .padd-box -->
+    <!-- END: PAGE CONTENT -->
+{% endblock %}

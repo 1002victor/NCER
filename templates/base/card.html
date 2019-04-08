@@ -1,19 +1,14 @@
 {% load staticfiles %}
 <article id="ace-card" class="ace-card bg-primary">
     <div class="ace-card-inner text-center">
-        {% if islogin %}
-            <img class="avatar avatar-195" src="/uploads/{{ request.user.avatar }}" width="195" height="195" alt="">
-        {% else %}
-            <img class="avatar avatar-195" src="/uploads/avatar/default.png" width="195" height="195" alt="">
-        {% endif %}
-
+        <img class="avatar avatar-195" src="/uploads/{{ useravatar}}" width="195" height="195" alt="">
         <h1>{{ username }}</h1>
-        <p class="text-muted">现代计算机之父</p>
+        <p class="text-muted">{{ usernick|safe }}</p>
         <ul class="ace-social clear-list">
-            <li><a><span class="ace-icon ace-icon-home" title="首页"></span></a></li>
+            <li><a href="/"><span class="ace-icon ace-icon-home" title="首页"></span></a></li>
             <li><a><span class="ace-icon ace-icon-comment" title="消息"></span></a></li>
             <li><a href="/account/userinfo/"><span class="ace-icon ace-icon-info" title="个人中心"></span></a></li>
-            {% if islogin %}
+            {% if request.user.is_authenticated %}
                 <li><a href="/account/logout/"><span class="ace-icon ace-icon-sign-out" title="注销"></span></a></li>
             {% else %}
                 <li><a href="/account/login/"><span class="ace-icon ace-icon-sign-in" title="登录"></span></a></li>

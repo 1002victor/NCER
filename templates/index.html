@@ -1,40 +1,25 @@
+{% extends 'base/base.html' %}
 {% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en" class="ace ace-card-on ace-tab-nav-on ace-main-nav-on ace-sidebar-on" data-theme-color="#c0e3e7">
-<head>
+{% block pagecontent %}
+    <!-- START: PAGE CONTENT -->
+    <div class="padd-box clear-mrg">
+        <section class="section brd-btm">
+            <div class="row">
+                <div class="col-sm-12 clear-mrg text-box">
+                    <h2 class="title-lg text-upper">声明</h2>
+                    <p><b>首先，感谢您使用本系统！</b><br>
+                        本系统为非盈利公益项目，旨在为口袋没有多少钢镚的在校学生提供考试备考的便利，同时这是一个
+                        学习交流的平台，留言区请勿散播广告甚至违法信息。所有题源来自 互联网，如有侵权请留言通知
+                        删除。谢谢合作。</p>
+                </div>
+            </div>
+        </section><!-- .section -->
 
-{% include 'base/header.html' %}
-</head>
-<body>
-<div class="ace-wrapper">
-    {% include 'base/nav.html' %}
-    {% include 'base/card.html' %}
-
-    <div id="ace-content" class="ace-container-shift">
-        <div class="ace-container">
-            <div class="ace-paper-stock">
-                <main class="ace-paper clearfix">
-                    <div class="ace-paper-cont clear-mrg">
-
-                        <!-- START: PAGE CONTENT -->
-                        <div class="padd-box clear-mrg">
-                            <section class="section brd-btm">
-                                <div class="row">
-                                    <div class="col-sm-12 clear-mrg text-box">
-                                        <h2 class="title-lg text-upper">声明</h2>
-                                        <p><b>首先，感谢您使用本系统！</b><br>
-                                            本系统为非盈利公益项目，旨在为口袋没有多少钢镚的在校学生提供考试备考的便利，同时这是一个
-                                            学习交流的平台，留言区请勿散播广告甚至违法信息。所有题源来自 互联网，如有侵权请留言通知
-                                            删除。谢谢合作。</p>
-                                    </div>
-                                </div>
-                            </section><!-- .section -->
-
-                            <section class="section brd-btm">
-                                <div class="progress-bullets ace-animate" role="progressbar" aria-valuenow="7"
-                                     aria-valuemin="0" aria-valuemax="10">
-                                    <strong class="progress-title">二级python</strong>
-                                    <span class="progress-bar">
+        <section class="section brd-btm">
+            <div class="progress-bullets ace-animate" role="progressbar" aria-valuenow="7"
+                 aria-valuemin="0" aria-valuemax="10">
+                <strong class="progress-title">二级python</strong>
+                <span class="progress-bar">
                                         <span class="bullet"></span>
                                         <span class="bullet"></span>
                                         <span class="bullet"></span>
@@ -46,20 +31,10 @@
                                         <span class="bullet"></span>
                                         <span class="bullet"></span>
                                     </span>
-                                    <span class="progress-text text-muted">0</span>
-                                </div>
-                            </section><!-- .section -->
-                        </div><!-- .padd-box -->
-                        <!-- END: PAGE CONTENT -->
-                    </div><!-- .ace-paper-cont -->
-                </main><!-- .ace-paper -->
-            </div><!-- .ace-paper-stock -->
-        </div><!-- .ace-container -->
-    </div><!-- #ace-content -->
-{% include 'base/footer.html' %}
-</div><!-- .ace-wrapper -->
+                <span class="progress-text text-muted">0</span>
+            </div>
+        </section><!-- .section -->
+    </div><!-- .padd-box -->
+    <!-- END: PAGE CONTENT -->
+{% endblock %}
 
-<!-- Scripts -->
-{% include 'base/script.html' %}
-</body>
-</html>

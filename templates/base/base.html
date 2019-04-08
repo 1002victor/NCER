@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en" class="ace ace-card-on ace-tab-nav-on ace-main-nav-on ace-sidebar-on" data-theme-color="#c0e3e7">
+<head>
+
+{% include 'base/header.html' %}
+</head>
+<body>
+<div class="ace-wrapper">
+    {% include 'base/nav.html' %}
+    {% include 'base/card.html' %}
+
+    <div id="ace-content" class="ace-container-shift">
+        <div class="ace-container">
+            <div class="ace-paper-stock">
+                <main class="ace-paper clearfix">
+                    <div class="ace-paper-cont clear-mrg">
+
+                        <!-- START: PAGE CONTENT -->
+                        {% block pagecontent %}
+
+                        {% endblock %}
+                        <!-- END: PAGE CONTENT -->
+                    </div><!-- .ace-paper-cont -->
+                </main><!-- .ace-paper -->
+            </div><!-- .ace-paper-stock -->
+        </div><!-- .ace-container -->
+    </div><!-- #ace-content -->
+{% include 'base/footer.html' %}
+</div><!-- .ace-wrapper -->
+
+<!-- Scripts -->
+{% include 'base/script.html' %}
+</body>
+</html>
